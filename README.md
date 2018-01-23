@@ -45,7 +45,7 @@ import SVGSkeleton from 'svg-skeleton';
 
 const { h, render } = SVGSkeleton;
 
-// #shining 动画
+// 内置 #shining 动画
 const Item = (
     <svg width="750" height="170">
         <rect width="750" height="170" x="0" y="0" fill="#fafafa" rx="0" ry="0"/>
