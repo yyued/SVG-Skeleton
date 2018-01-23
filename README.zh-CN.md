@@ -22,7 +22,7 @@ npm i svg-skeleton --save
 <script src="https://cdn.jsdelivr.net/npm/svg-skeleton/dist/svg-skeleton.min.js"></script>
 ```
 
-## 简单使用
+## 使用
 
 ```js
 import SVGSkeleton from 'svg-skeleton';
@@ -55,8 +55,9 @@ const Page = ( ( ) => {
 render( Page,  document.body );
 ```
 
-![](./README/iPhone7.png)
-
+<p align="center">
+    <img src="./README/iPhone7.png" width="250px">
+</p>
 
 ## 许可
 
