@@ -1,5 +1,17 @@
 <h1 align="center"> SVG-Skeleton </h1>
 
+<p align="center">
+    <a href="https://opensource.org/licenses/MIT">
+        <img alt="Licence" src="https://img.shields.io/badge/license-MIT-green.svg" />
+    </a>
+    <a href="https://www.npmjs.org/package/svg-skeleton">
+        <img alt="NPM" src="https://img.shields.io/badge/npm-v0.2.0-brightgreen.svg" />
+    </a>
+    <a href="">
+        <img alt="Size" src="https://img.shields.io/badge/size-2kb-blue.svg" />
+    </a>
+</p>
+
 ## Why
 
 Skeletal screen, we are no stranger to, and the biggest existence of the skeletal screen is due to the page rendering out of content for a long time, and use it to occupy the page, users to reduce the time to perceive white screen.
@@ -25,6 +37,8 @@ or
 ```
 
 ## Usage
+
+### JSX Code
 
 ```js
 import SVGSkeleton from 'svg-skeleton';
@@ -56,6 +70,8 @@ const Page = ( ( ) => {
 
 render( Page,  document.body );
 ```
+
+### Output
 
 <p align="center">
     <img src="./README/iPhone7.png" width="250px">

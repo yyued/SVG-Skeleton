@@ -1,5 +1,17 @@
 <h1 align="center"> SVG-Skeleton </h1>
 
+<p align="center">
+    <a href="https://opensource.org/licenses/MIT">
+        <img alt="Licence" src="https://img.shields.io/badge/license-MIT-green.svg" />
+    </a>
+    <a href="https://www.npmjs.org/package/svg-skeleton">
+        <img alt="NPM" src="https://img.shields.io/badge/npm-v0.0.1-brightgreen.svg" />
+    </a>
+    <a href="">
+        <img alt="Size" src="https://img.shields.io/badge/size-2kb-blue.svg" />
+    </a>
+</p>
+
 ## 为什么使用
 
 骨骼屏我们都并不陌生，而骨骼屏的最大的存在意义是 由于页面渲染出内容的时间较长，而使用它在页面上占位，让用户感知白屏的时间减少。
@@ -23,6 +35,8 @@ npm i svg-skeleton --save
 ```
 
 ## 使用
+
+### JSX 代码
 
 ```js
 import SVGSkeleton from 'svg-skeleton';
@@ -54,6 +68,8 @@ const Page = ( ( ) => {
 
 render( Page,  document.body );
 ```
+
+## 输出
 
 <p align="center">
     <img src="./README/iPhone7.png" width="250px">

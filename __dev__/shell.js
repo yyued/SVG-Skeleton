@@ -9,7 +9,7 @@ module.exports = ( param ) => {
     const src = path.resolve( folder, '../src' );
     const source = path.resolve( folder, './src/js/svg-skeleton' );
 
-    const nodePath = '/Users/lijialiang/.nvm/versions/node/v8.6.0/bin/node';
+    const nodePath = '/Users/lijialiang/.nvm/versions/node/v8.9.1/bin/node';
 
     shell.config.execPath = nodePath;
 
