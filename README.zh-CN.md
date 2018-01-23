@@ -75,6 +75,20 @@ render( Page,  document.body );
     <img src="./README/iPhone7.png" width="250px">
 </p>
 
+## 依赖
+
+### [JSX & h](https://www.npmjs.com/package/babel-plugin-transform-react-jsx)
+
+设置会类似于
+
+```json
+{
+    "plugins": [
+        [ "transform-react-jsx", { "pragma": "h" } ]
+    ]
+}
+```
+
 ## 许可
 
 [MIT](./LICENSE)

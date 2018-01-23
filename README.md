@@ -77,6 +77,20 @@ render( Page,  document.body );
     <img src="./README/iPhone7.png" width="250px">
 </p>
 
+## Depend
+
+### [JSX & h](https://www.npmjs.com/package/babel-plugin-transform-react-jsx)
+
+the setting will be similar to
+
+```json
+{
+    "plugins": [
+        [ "transform-react-jsx", { "pragma": "h" } ]
+    ]
+}
+```
+
 ## License
 
 [MIT](./LICENSE)
