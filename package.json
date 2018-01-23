@@ -1,0 +1,31 @@
+{
+  "name": "svg-skeleton",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./build"
+  },
+  "author": "lijialiang",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "fs-extra": "^4.0.2",
+    "webpack": "^3.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yyued/SVG-Skeleton.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yyued/SVG-Skeleton/issues"
+  },
+  "homepage": "https://github.com/yyued/SVG-Skeleton#readme",
+  "dependencies": {
+    "url-loader": "^0.6.2"
+  }
+}
