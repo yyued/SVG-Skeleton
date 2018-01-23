@@ -1,235 +1,62 @@
-# APIER.js
+<h1 align="center"> SVG-Skeleton </h1>
 
-基于 [axios](https://github.com/axios/axios) 扩展的网络请求 API 管理模块。
+## 为什么使用
 
-## 依赖
+骨骼屏我们都并不陌生，而骨骼屏的最大的存在意义是 由于页面渲染出内容的时间较长，而使用它在页面上占位，让用户感知白屏的时间减少。
 
-* Promise
-* [axios](https://github.com/axios/axios)
+若骨骼屏依赖 React / Vue 等核心框架的时候，必然先需要解析核心库，才到骨骼屏的渲染，这样无疑不是最佳选择。
+
+**SVG-Skeleton** 正是我们一直所期望的方案的实现。
+
+通过 SVG 元素去描述去骨骼图的占位元素，支持 JSX 让编写 SVG 无差别化，复用 SVG 片段，类组件化模式。
 
 ## 安装
 
-通过使用 npm 安装
-
 ```sh
-npm i apierjs --save
+npm i svg-skeleton --save
 ```
 
-或者 直接下载 [APIER.min.js](https://github.com/yyued/APIER/blob/master/dist/APIER.min.js) 外链使用
+或者
 
 ```html
-<script src="./APIER.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/svg-skeleton/dist/svg-skeleton.min.js"></script>
 ```
 
 ## 简单使用
 
 ```js
-import APIER from 'apierjs';
+import SVGSkeleton from 'svg-skeleton';
 
-(async () => {
-    const API = new APIER({
-        test: 'https://legox.org/mock/a3e67a40-863c-11e7-9085-0ba4558c07dc',
-    });
+const { h, render } = SVGSkeleton;
 
-    const data = await API.test();
-    console.log( data );
-})();
-```
+const Item = (
+    <svg width="750" height="170">
+        <rect width="750" height="170" x="0" y="0" fill="#fafafa" rx="0" ry="0"/>
+        <circle cx="71.5" cy="86.5" r="36.5" fill="#edeff0"/>
+        <rect width="106" height="35" x="135" y="50" fill="#edeff0" rx="0" ry="0"/>
+        <rect width="196" height="35" x="135" y="90" fill="#edeff0" rx="0" ry="0"/>
+    </svg>
+);
 
-## 全局配置项
+const Page = ( ( ) => {
+    let List = [ ];
 
-| 参数名 | 描述 | 类型 | 默认值 |
-|-|-|-|-|
-| method | 请求方式 | String | POST |
-| host | 主域 | String | - |
-| debug | 是否调试 | Boolean | false |
-| isMock | 是否请求模拟接口 | Boolean | false |
-| error | 错误回调 | Function | - |
-| interceptor | 请求前后拦截器 | Object | - |
-| ...... | axios 配置项 | [axios config](https://github.com/axios/axios#request-config) | - |
-
-```js
-const url = {
-    test: '...',
-};
-
-const option = {
-    method: 'GET',
-};
-
-const API = new APIER( option, url );
-
-await API.test();
-```
-
-## 局部配置项
-
-参数 与 全局配置项 相同
-
-**优先级**：局部配置项 > 全局配置项
-
-```js
-const API = new APIER({
-    test: {
-        method: 'GET',
-        url: '...',
+    for ( let i = 0; i < 10; i++ ) {
+        List.push( ( <Item y={ i == 0 ? 0 : i * ( 170 + 20 ) } /> ) );
     }
-});
 
-await API.test();
+    return (
+        <svg width="750" height="1334">
+            { List }
+        </svg>
+    );
+} )( );
+
+render( Page,  document.body );
 ```
 
-## 调用时配置项
+![](./README/iPhone7.png)
 
-参数 与 全局配置项 相同
-
-**优先级**：调用时配置项 > 局部配置项 > 全局配置项
-
-```js
-const API = new APIER({
-    test: '...',
-});
-
-// { id: 1 } 为 data
-await API.test({ id: 1 });
-await API.test({ method: 'GET' }, { id: 1 });
-```
-
-## 模拟接口
-
-```js
-const option = {
-    isMock: true,
-}
-
-const mock = {
-    test: '...',
-}
-
-const url = {
-    test: '...',
-}
-
-const API = new APIER( option, mock, url );
-
-await API.test();
-```
-
-## 错误回调
-
-```js
-const error = ( e, key, option ) => {
-    // ...
-}
-
-const option = { error };
-
-const url = {
-    test: '...',
-}
-
-const API = new APIER( option, url );
-
-await API.test();
-```
-
-## 前后拦截器
-
-```js
-// 支持 Promise 异步拦截
-const interceptor = {
-    before ( key, option ) {
-        return new Promise(( resolve, reject ) => {
-            setTimeout(( ) => {
-                console.log( '自定义前拦截器' );
-                resolve();
-            }, 1000);
-        })
-    },
-    after ( key, option, response ) {
-        console.log( '自定义后拦截器', key );
-    },
-}
-
-const option = { interceptor };
-
-const url = {
-    test: '...',
-}
-
-const API = new APIER( option, url );
-
-await API.test();
-```
-
-## 自定义请求方式
-
-```js
-const API = new APIER({
-    test: {
-        method: 'custom',
-        url: '...',
-    }
-})
-
-API.$method('custom', ( data ) => {
-    return new Promise(( resolve, reject ) => {
-        setTimeout(() => {
-            resolve( data );
-        }, 3000);
-    });
-});
-
-await API.test();
-```
-
-## 调试模式
-
-```js
-const option = { debug: true };
-
-const url = {
-    test: '...',
-}
-
-const API = new APIER( option, url );
-
-await API.test();
-
-// 调试模式下，记录请求耗时等信息
-console.log( API.$history );
-```
-
-## 获取 URL
-
-```js
-const API = new APIER( { test: '...' } );
-
-console.log( API.test.getURL() ); // ...
-```
-
-## RESTful 请求规范
-
-```js
-const API = new APIER( { test: '...' } );
-
-await API.test.GET( [option], data );
-await API.test.POST( [option], data );
-await API.test.PUT( [option], data );
-await API.test.DELETE( [option], data );
-```
-
-## 独立请求
-
-在 独立请求 下 全局配置 / 拦截器 / 错误回调 仍有效
-
-```js
-const API = new APIER();
-
-await API.$request( url );
-await API.$request( url, data );
-await API.$request( url, option, data );
-```
 
 ## 许可
 
