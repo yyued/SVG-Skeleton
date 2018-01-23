@@ -5,7 +5,7 @@
         <img alt="Licence" src="https://img.shields.io/badge/license-MIT-green.svg" />
     </a>
     <a href="https://www.npmjs.org/package/svg-skeleton">
-        <img alt="NPM" src="https://img.shields.io/badge/npm-v0.0.1-brightgreen.svg" />
+        <img alt="NPM" src="https://img.shields.io/badge/npm-v0.0.2-brightgreen.svg" />
     </a>
     <a href="">
         <img alt="Size" src="https://img.shields.io/badge/size-2kb-blue.svg" />
@@ -47,9 +47,9 @@ const { h, render } = SVGSkeleton;
 const Item = (
     <svg width="750" height="170">
         <rect width="750" height="170" x="0" y="0" fill="#fafafa" rx="0" ry="0"/>
-        <circle cx="71.5" cy="86.5" r="36.5" fill="#edeff0" mask="url(#shining)" />
-        <rect width="106" height="35" x="135" y="50" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
-        <rect width="196" height="35" x="135" y="90" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
+        <circle cx="70" cy="86" r="35" fill="#edeff0" mask="url(#shining)" />
+        <rect width="100" height="35" x="135" y="50" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
+        <rect width="550" height="35" x="135" y="90" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
     </svg>
 );
 
