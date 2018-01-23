@@ -3,25 +3,19 @@
 const path = require('path');
 
 module.exports = ( param ) => {
-    const { fs, del, folder, messager, args, gulp, shell } = param;
+    const { del, folder, gulp, messager, node_exec_file } = param;
 
     const root = path.resolve( folder, '../' );
     const src = path.resolve( folder, '../src' );
     const source = path.resolve( folder, './src/js/svg-skeleton' );
 
-    const nodePath = '/Users/lijialiang/.nvm/versions/node/v8.9.1/bin/node';
-
-    shell.config.execPath = nodePath;
-
     del( [ `${ src }/**/*` ], { force: true }, ( ) => {
         gulp.src( `${ source }/**/*` )
             .pipe( gulp.dest( src ) )
             .on( 'end', ( ) => {
-                shell.cd( root );
-
-                if ( shell.exec( `${ nodePath } ${ root }/build/index.js` ).code == 0 ) {
-                    messager.success();
-                }
+                node_exec_file( `${ root }/build/index.js`, ( code ) => {
+                    code == 0 ? messager.success( ) : messager.error( 'build error' );
+                } )
             } )
     } );
 }

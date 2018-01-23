@@ -43,12 +43,13 @@ import SVGSkeleton from 'svg-skeleton';
 
 const { h, render } = SVGSkeleton;
 
+// #shining animation
 const Item = (
     <svg width="750" height="170">
         <rect width="750" height="170" x="0" y="0" fill="#fafafa" rx="0" ry="0"/>
-        <circle cx="71.5" cy="86.5" r="36.5" fill="#edeff0"/>
-        <rect width="106" height="35" x="135" y="50" fill="#edeff0" rx="0" ry="0"/>
-        <rect width="196" height="35" x="135" y="90" fill="#edeff0" rx="0" ry="0"/>
+        <circle cx="71.5" cy="86.5" r="36.5" fill="#edeff0" mask="url(#shining)" />
+        <rect width="106" height="35" x="135" y="50" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
+        <rect width="196" height="35" x="135" y="90" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
     </svg>
 );
 
@@ -72,7 +73,7 @@ render( Page,  document.body );
 ## 输出
 
 <p align="center">
-    <img src="./README/iPhone7.png" width="250px">
+    <img src="./README/1.gif" width="250px">
 </p>
 
 ## 依赖

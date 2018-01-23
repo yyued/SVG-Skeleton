@@ -17,7 +17,7 @@ SVG-Skeleton
 @version: ${ packageJSON.version }
 @update: ${ ( new Date() ).format('YYYY-MM-DD hh:mm:ss') }
 
-(c) 2017 YY UEDC
+(c) 2018 YY UEDC
 Released under the MIT License.
 `;
 

@@ -20,14 +20,17 @@ const setAttribute = ( node, attributes ) => {
     }
 }
 
+
 export function h ( nodeName, attributes, ...children ) {
 
     let node = void 0;
 
     if ( !node && typeof nodeName === 'object' ) {
-        attributes ? setAttribute( nodeName, attributes ) : void 0;
+        node = nodeName.cloneNode( true );
 
-        return nodeName.cloneNode( true );
+        attributes ? setAttribute( node, attributes ) : void 0;
+
+        return node;
     }
 
     nodeName && typeof nodeName === 'string' ? node = createElement( nodeName ) : void 0;
