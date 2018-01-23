@@ -9,9 +9,10 @@ header {
     margin: auto;
     width: 500px;
     border-bottom: 1px solid #eee;
-    h1 {
-        display: none;
-    }
+}
+
+header h1 {
+    display: none;
 }
 
 footer {
