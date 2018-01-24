@@ -78,7 +78,7 @@ render( Page,  document.body );
     <img src="./README/1.gif" width="250px">
 </p>
 
-## Depend [JSX & h](https://www.npmjs.com/package/babel-plugin-transform-react-jsx)
+## Depend on [JSX & h](https://www.npmjs.com/package/babel-plugin-transform-react-jsx)
 
 the setting will be similar to
 
