@@ -76,11 +76,9 @@ render( Page,  document.body );
     <img src="./README/1.gif" width="250px">
 </p>
 
-## 依赖
+## 依赖 [JSX & h](https://www.npmjs.com/package/babel-plugin-transform-react-jsx)
 
-### [JSX & h](https://www.npmjs.com/package/babel-plugin-transform-react-jsx)
-
-设置会类似于
+设置类似于
 
 ```json
 {
