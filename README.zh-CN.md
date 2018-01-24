@@ -45,23 +45,23 @@ const { h, render } = SVGSkeleton;
 
 // 内置 #shining 动画
 const Item = (
-    <svg width="750" height="170">
-        <rect width="750" height="170" x="0" y="0" fill="#fafafa" rx="0" ry="0"/>
-        <circle cx="70" cy="86" r="35" fill="#edeff0" mask="url(#shining)" />
-        <rect width="100" height="35" x="135" y="50" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
-        <rect width="550" height="35" x="135" y="90" fill="#edeff0" rx="0" ry="0" mask="url(#shining)" />
+    <svg width="750" height="191">
+        <circle cx="95" cy="102" r="63" fill="#edeff0" mask="url(#shining)" />
+        <rect width="160" height="35" x="190" y="45" fill="#edeff0" mask="url(#shining)" />
+        <rect width="400" height="35" x="190" y="90" fill="#edeff0" mask="url(#shining)" />
+        <line x1="0" y1="190" x2="750" y2="190" stroke="#edeff0"></line>
     </svg>
 );
 
 const Page = ( ( ) => {
     let List = [ ];
 
-    for ( let i = 0; i < 10; i++ ) {
-        List.push( ( <Item y={ i == 0 ? 0 : i * ( 170 + 20 ) } /> ) );
+    for ( let i = 0; i < 6; i++ ) {
+        List.push( ( <Item y={ i == 0 ? 0 : i * 191 } /> ) );
     }
 
     return (
-        <svg width="750" height="1334">
+        <svg width="750" height="1334" fill="#fafafa">
             { List }
         </svg>
     );
@@ -75,6 +75,23 @@ render( Page,  document.body );
 <p align="center">
     <img src="./README/1.gif" width="250px">
 </p>
+
+## Diff
+
+为了尽量骨骼屏幕的元素的位置跟设计稿一样，你需要 Diff 这个功能。
+
+### 代码
+
+```js
+render( diff( Page, require('./list.png') ),  document.body );
+```
+
+### 输出
+
+<p align="center">
+    <img src="./README/2.gif" width="250px">
+</p>
+
 
 ## 依赖 [JSX & h](https://www.npmjs.com/package/babel-plugin-transform-react-jsx)
 
