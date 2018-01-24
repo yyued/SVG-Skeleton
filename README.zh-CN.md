@@ -83,6 +83,8 @@ render( Page,  document.body );
 ### 代码
 
 ```js
+const { diff } = SVGSkeleton;
+
 render( diff( Page, require('./list.png') ),  document.body );
 ```
 

@@ -85,6 +85,8 @@ In order to try to position the elements of the bone screen the same as the desi
 ### Code
 
 ```js
+const { diff } = SVGSkeleton;
+
 render( diff( Page, require('./list.png') ),  document.body );
 ```
 
