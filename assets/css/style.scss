@@ -7,7 +7,7 @@ header {
     position: initial;
     float: initial;
     margin: auto;
-    width: 500px;
+    width: 100%;
     border-bottom: 1px solid #eee;
 }
 
@@ -31,4 +31,9 @@ section {
     float: initial;
     margin: auto;
     margin-top: 70px;
+    width: 100%;
+}
+
+h2 {
+    margin-top: 60px;
 }
