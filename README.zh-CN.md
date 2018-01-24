@@ -70,7 +70,7 @@ const Page = ( ( ) => {
 render( Page,  document.body );
 ```
 
-## 输出
+### 输出
 
 <p align="center">
     <img src="./README/1.gif" width="250px">
