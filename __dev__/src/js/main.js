@@ -7,7 +7,7 @@ const Item = (
         <circle cx="95" cy="102" r="63" fill="#edeff0" mask="url(#shining)" />
         <rect width="160" height="35" x="190" y="45" fill="#edeff0" mask="url(#shining)" />
         <rect width="400" height="35" x="190" y="90" fill="#edeff0" mask="url(#shining)" />
-        <line x1="0" y1="190" x2="750" y2="190" stroke="#edeff0"></line>
+        <line x1="0" y1="190" x2="750" y2="190" stroke="#edeff0" />
     </svg>
 );
 
@@ -25,5 +25,14 @@ const Page = ( ( ) => {
     );
 } )( );
 
+const PageString = `
+                    <svg width="750px" height="191px">
+                        <circle cx="95" cy="102" r="63" fill="#edeff0" mask="url(#shining)" />
+                        <rect width="160" height="35" x="190" y="45" fill="#edeff0" mask="url(#shining)" />
+                        <rect width="400" height="35" x="190" y="90" fill="#edeff0" mask="url(#shining)" />
+                        <line x1="0" y1="190" x2="750" y2="190" stroke="#edeff0" />
+                    </svg>
+                `;
+
 // render( diff( Page, require('./img/list.png') ),  document.body );
-// render( Page, document.body );
+render( PageString, document.body );

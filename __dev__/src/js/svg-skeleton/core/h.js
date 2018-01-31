@@ -10,7 +10,7 @@ const setAttribute = ( node, attributes ) => {
 
         switch ( key ) {
             case 'xlink:href': {
-                node[ 0 ].setAttributeNS( 'http://www.w3.org/1999/xlink', key, value );
+                node.setAttributeNS( 'http://www.w3.org/1999/xlink', key, value );
                 break;
             }
             default: {
@@ -19,7 +19,6 @@ const setAttribute = ( node, attributes ) => {
         }
     }
 }
-
 
 export function h ( nodeName, attributes, ...children ) {
 

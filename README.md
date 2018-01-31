@@ -5,7 +5,7 @@
         <img alt="Licence" src="https://img.shields.io/badge/license-MIT-green.svg" />
     </a>
     <a href="https://www.npmjs.org/package/svg-skeleton">
-        <img alt="NPM" src="https://img.shields.io/badge/npm-v0.0.2-brightgreen.svg" />
+        <img alt="NPM" src="https://img.shields.io/badge/npm-v0.0.4-brightgreen.svg" />
     </a>
     <a href="">
         <img alt="Size" src="https://img.shields.io/badge/size-2kb-blue.svg" />

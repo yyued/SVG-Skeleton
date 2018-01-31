@@ -21,6 +21,5 @@ module.exports = ( ) => {
                         </mask>
                     `;
 
-
     return defs;
 };

@@ -1,6 +1,10 @@
 'use strict';
 
 export function diff ( node, image ) {
+    if ( !node || !image ) {
+        return void 0;
+    }
+
     const newNode = node.cloneNode( true );
 
     const imageNode = document.createElementNS( 'http://www.w3.org/2000/svg', 'image' );
